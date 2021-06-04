@@ -2,11 +2,15 @@ import React, { useState } from "react";
 
 export const SignIn = () => {
 
-  const initialState = { username: "", email: "", password: ""};
+  const initialState = { username: "", password: ""};
   const [newUserInfo, setNewUserInfo] = useState(initialState);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+
+
+
     setNewUserInfo(initialState);
   };
 
@@ -17,10 +21,10 @@ export const SignIn = () => {
 
   return (
     <div>
-      <h2>I already an account</h2>
+      <h2>I already have an account</h2>
       <span>Sign in with your email and password</span>
 
-      <form onSubmit={handleSubmit}>
+      <form action="" onSubmit={handleSubmit}>
         <label>Username: </label>
         <input
           type="text"

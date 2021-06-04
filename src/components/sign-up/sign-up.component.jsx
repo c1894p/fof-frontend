@@ -1,49 +1,51 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useHistory } from "react-router-dom"
 
 export const SignUp = () => {
   const initialState = {username: "", email: "", password: "", confirmPassword:""}
-  const [newUserInfo, setNewUserInfo] = useState(initialState);
+  const [newUserState, setNewUserState] = useState(initialState);
+
+
+  let history = useHistory()
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const { password, confirmPassword } = newUserInfo;
-    if (password !== confirmPassword) {
-      alert("passwords don't match");
-      return;
-    }
+    axios.post("http://localhost:8000/users/", {
+      username: e.target.username.value,
+      email:e.target.email.value,
+      password: e.target.password.value
+  })
+    .then(res =>console.log(res))
+    .catch(err => console.log(err))
 
-    const { username, email } = newUserInfo
+    setNewUserState(initialState)
 
-    axios
-    .post("http://localhost:8000/fof/users/", {username, email})
-    .then(function (response) {
-      console.log(response);
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
+    history.push('/create')
 
-    setNewUserInfo(initialState)
+    console.log(e)
   };
 
   const handleChange = (e) => {
     const { value, name } = e.target;
-    setNewUserInfo({ [name]: value });
+    setNewUserState({ [name]: value })
   };
+
+console.log(newUserState)
+
 
   return (
     <div>
       <h2>I don't have an account</h2>
       <span>Sign up with your email and password</span>
 
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} >
         <label>Username: </label>
         <input
           type="text"
           name="username"
-          value={newUserInfo.username}
+          value={newUserState.username}
           onChange={handleChange}
           required
         />
@@ -51,7 +53,7 @@ export const SignUp = () => {
         <input
           type="email"
           name="email"
-          value={newUserInfo.email}
+          value={newUserState.email}
           onChange={handleChange}
           required
         />
@@ -59,20 +61,21 @@ export const SignUp = () => {
         <input
           type="password"
           name="password"
-          value={newUserInfo.password}
+          value={newUserState.password}
           onChange={handleChange}
           required
         />
         <label>Confirm Password: </label>
         <input
           type="password"
-          name="confirm password"
-          value={newUserInfo.confirmPassword}
+          name="confirmPassword"
+          value={newUserState.confirmPassword}
           onChange={handleChange}
           required
         />
 
-        <input type="submit" value="Submit" />
+          <input type="submit" value="Submit" />
+
       </form>
     </div>
   );
