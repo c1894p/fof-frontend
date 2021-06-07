@@ -22,7 +22,7 @@ export const SignUp = () => {
 
     setNewUserState(initialState)
 
-    history.push('/createquiz')
+    history.push('/create')
 
     console.log(e)
   };

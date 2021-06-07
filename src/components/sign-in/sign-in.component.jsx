@@ -12,7 +12,7 @@ export const SignIn = () => {
     e.preventDefault();
     
     setNewUserInfo(initialState);
-    history.push('/createquiz')
+    history.push('/create')
   };
 
   const handleChange = (e) => {

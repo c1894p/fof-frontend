@@ -21,7 +21,7 @@ export const QuizForm = () => {
 
         setQuizState(initialState);
 
-        history.push("/createquestion")
+        history.push("/create/question")
     }
 
     const handleChange = (e) => {
