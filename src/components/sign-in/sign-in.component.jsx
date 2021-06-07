@@ -1,17 +1,18 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom"
 
 export const SignIn = () => {
 
   const initialState = { username: "", password: ""};
   const [newUserInfo, setNewUserInfo] = useState(initialState);
 
+  let history = useHistory()
+
   const handleSubmit = (e) => {
     e.preventDefault();
-
-
-
-
+    
     setNewUserInfo(initialState);
+    history.push('/create')
   };
 
   const handleChange = (e) => {

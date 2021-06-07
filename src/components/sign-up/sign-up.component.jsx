@@ -12,7 +12,7 @@ export const SignUp = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    axios.post("http://localhost:8000/users/", {
+    axios.post("http://localhost:3000/users", {
       username: e.target.username.value,
       email:e.target.email.value,
       password: e.target.password.value
@@ -31,8 +31,6 @@ export const SignUp = () => {
     const { value, name } = e.target;
     setNewUserState({ [name]: value })
   };
-
-console.log(newUserState)
 
 
   return (

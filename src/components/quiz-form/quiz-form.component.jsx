@@ -1,45 +1,60 @@
-// import React from "react";
+import axios from "axios";
+import React, { useState } from "react";
+import {useHistory} from "react-router-dom";
 
-// export const QuizForm = () => {
 
-//   return (
-//     <div>
-//       <h1>FoF</h1>
-//       <p>The time has come to create your quiz!</p>
-//       <p>Fill out the form below:</p>
-//       <form action="">
-//         <label htmlFor="title">Quiz Title: </label>
-//         <input
-//           type="text"
-//           name="title"
-//           value=""
-//           required
-//         />
-//         <br/>
-//         <label htmlFor="question">Question 1: </label>
-//         <input
-//           type="text"
-//           name="question"
-//           value=""
-//           required
-//         />
-//         <br/>
-//         <label htmlFor="choices">Enter choices: </label>
-//         <input
-//           type="text"
-//           name="choices"
-//           value=""
-//           required
-//         />
-//         <br/>
-//         <label htmlFor="answers">Enter answer: </label>
-//         <input
-//           type="text"
-//           name="title"
-//           value=""
-//           required
-//         />
-//       </form>
-//     </div>
-//   );
-// };
+export const QuizForm = () => {
+    const initialState = {author:"", title: ""}
+    const [quizState, setQuizState] = useState(initialState)
+
+    let history = useHistory()
+
+    const handleSubmit = (e) =>{
+        e.preventDefault();
+
+        axios.post("http://localhost:3000/quizzes", {
+            title: e.target.title.value,
+            question: e.target.question.value,
+        })
+        .then(res =>console.log(res))
+        .catch(err => console.log(err))
+
+        setQuizState(initialState);
+
+        history.push("/createquestion")
+    }
+
+    const handleChange = (e) => {
+        const { value, name } = e.target;
+        setQuizState({ [name]: value })
+      };
+
+  return (
+    <div>
+      <h1>FoF</h1>
+      <p>The time has come to create your quiz!</p>
+      <p>Fill out the form below:</p>
+      <form onSubmit ={handleSubmit}>
+        <label htmlFor="author">Enter Username: </label>
+        <input
+          type="text"
+          name="author"
+          value= {quizState.title}
+          onChange={handleChange}
+          required 
+        />
+        <label htmlFor="title">Quiz Title: </label>
+        <input
+          type="text"
+          name="title"
+          value= {quizState.title}
+          onChange={handleChange}
+          required 
+        />
+
+        <input type="submit" value="Submit" />
+
+      </form>
+    </div>
+  )
+};
