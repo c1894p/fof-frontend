@@ -14,7 +14,7 @@ export const QuizForm = () => {
 
         axios.post("http://localhost:3000/quizzes", {
             title: e.target.title.value,
-            question: e.target.question.value,
+            author: e.target.author.value,
         })
         .then(res =>console.log(res))
         .catch(err => console.log(err))
@@ -39,7 +39,7 @@ export const QuizForm = () => {
         <input
           type="text"
           name="author"
-          value= {quizState.title}
+          value= {quizState.author}
           onChange={handleChange}
           required 
         />
@@ -56,5 +56,5 @@ export const QuizForm = () => {
 
       </form>
     </div>
-  )
+  );
 };
