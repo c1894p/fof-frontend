@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import {useHistory} from "react-router-dom";
 
 
-export const QuizForm = () => {
+export const QuizForm = ({setQuizDataState}) => {
     const initialState = {author:"", title: ""}
     const [quizState, setQuizState] = useState(initialState)
 
@@ -16,11 +16,16 @@ export const QuizForm = () => {
             title: e.target.title.value,
             author: e.target.author.value,
         })
-        .then(res =>console.log(res))
+        .then(res =>{
+          return res
+        })
+        .then( res => {
+          const data = res.data
+          setQuizDataState(data._id)
+        })
         .catch(err => console.log(err))
 
         setQuizState(initialState);
-
         history.push("/create/question")
     }
 

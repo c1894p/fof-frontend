@@ -1,10 +1,10 @@
 import React from 'react';
 import { QuizForm } from '../../components/quiz-form/quiz-form.component'
 
-export const CreateQuiz = () => {
+export const CreateQuiz = ({setQuizDataState}) => {
     return(
         <div>
-            <QuizForm />
+            <QuizForm setQuizDataState={setQuizDataState}/>
         </div>
     )
 }

@@ -1,7 +1,7 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
-export const QuestionForm = () => {
+export const QuestionForm = ({quizDataState}) => {
   const initialState = {
     question: "",
     optionA: "",
@@ -10,14 +10,17 @@ export const QuestionForm = () => {
     optionD: "",
     answer: "",
   };
+
   const [questionState, setQuestionState] = useState(initialState);
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    const id = quizDataState
+
     axios
       .post(
-        "http://localhost:3000/quizzes/60be886a42eb97ac0a95074b/questions",
+        `http://localhost:3000/quizzes/${id}/questions`,
         {
           question: e.target.question.value,
           optionA: e.target.optionA.value,
@@ -33,7 +36,7 @@ export const QuestionForm = () => {
     setQuestionState(initialState);
   };
 
-    const handleChange = (e) => {
+  const handleChange = (e) => {
     const { value, name } = e.target;
     setQuestionState({ [name]: value });
   };
@@ -41,6 +44,7 @@ export const QuestionForm = () => {
   return (
     <div>
       <h1>FoF</h1>
+      <span>{quizDataState}</span>
       <p>
         Great! Now that you have created your quiz, it's time to add some
         questions!
