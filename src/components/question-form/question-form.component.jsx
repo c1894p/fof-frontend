@@ -1,7 +1,8 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
+import {Link} from 'react-router-dom'
 
-export const QuestionForm = ({quizDataState}) => {
+export const QuestionForm = ({ quizDataState }) => {
   const initialState = {
     question: "",
     optionA: "",
@@ -16,20 +17,18 @@ export const QuestionForm = ({quizDataState}) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const id = quizDataState
+    const id = quizDataState._id;
 
     axios
-      .post(
-        `http://localhost:3000/quizzes/${id}/questions`,
-        {
-          question: e.target.question.value,
-          optionA: e.target.optionA.value,
-          optionB: e.target.optionB.value,
-          optionC: e.target.optionC.value,
-          optionD: e.target.optionD.value,
-          answer: e.target.answer.value,
-        }
-      )
+      .post(`http://localhost:3000/quizzes/${id}/questions`, 
+      {
+        question: e.target.question.value,
+        optionA: e.target.optionA.value,
+        optionB: e.target.optionB.value,
+        optionC: e.target.optionC.value,
+        optionD: e.target.optionD.value,
+        answer: e.target.answer.value,
+      })
       .then((res) => console.log(res))
       .catch((err) => console.log(err));
 
@@ -44,10 +43,13 @@ export const QuestionForm = ({quizDataState}) => {
   return (
     <div>
       <h1>FoF</h1>
-      <span>{quizDataState}</span>
+      {/* <span>{quizDataState}</span> */}
       <p>
         Great! Now that you have created your quiz, it's time to add some
         questions!
+      </p>
+      <p>
+        Add as many questions as you'd like. Once you are done, click FINISH!
       </p>
       <p>Fill out the form below:</p>
       <form onSubmit={handleSubmit}>
@@ -100,8 +102,12 @@ export const QuestionForm = ({quizDataState}) => {
           required
         />
 
-        <input type="submit" value="Submit" />
+        <input type="submit" value="Add Question" />
       </form>
+
+      <Link to="/dashboard">
+          <button>FINISH</button>
+      </Link>
     </div>
   );
 };

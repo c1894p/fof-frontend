@@ -17,14 +17,12 @@ export const SignUp = () => {
       email:e.target.email.value,
       password: e.target.password.value
   })
-    .then(res =>console.log(res))
+    .then(res =>console.log(res.data))
     .catch(err => console.log(err))
 
     setNewUserState(initialState)
 
     history.push('/create')
-
-    console.log(e)
   };
 
   const handleChange = (e) => {

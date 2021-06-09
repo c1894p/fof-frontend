@@ -12,7 +12,7 @@ export const SignIn = () => {
     e.preventDefault();
     
     setNewUserInfo(initialState);
-    history.push('/create')
+    history.push('/dashboard')
   };
 
   const handleChange = (e) => {
