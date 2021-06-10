@@ -9,6 +9,11 @@ import { QuizDashboard } from "./pages/quiz-dashboard/quiz-dashboard.component"
 import { QuestionForm } from "./components/question-form/question-form.component";
 import { QuizDetail} from "./components/quiz-detail/quiz-detail.component"
 import{ EditQuiz} from "./components/edit-quiz/edit-quiz.component"
+import{EditQuestion} from "./components/edit-question/edit-question.component"
+import{ShareQuiz} from "./pages/share-quiz/share-quiz.component"
+import {PlayerScreen} from "./pages/player-screen/player-screen.component"
+import{Game} from "./components/game/game.component"
+
 import { Switch, Route } from "react-router-dom";
 
 function App() {
@@ -44,6 +49,10 @@ function App() {
           exact path="/create/question"
           render={() => <QuestionForm quizDataState={quizDataState} />}
         />
+         <Route
+          exact path="/dashboard/:id/:questionID/editquestion"
+          render={() => <EditQuestion />}
+        />
         <Route
           exact path="/dashboard/:id/editquiz"
           render={() => <EditQuiz getData={getData} />}
@@ -52,8 +61,11 @@ function App() {
           exact path="/dashboard"
           render={() => <QuizDashboard getData={getData} quizData={quizData} setQuizDta={setQuizData}/>}
         />
-        {/* <Route exact path ="/dashboard" component={QuizDashboard} /> */}
         <Route exact path ="/dashboard/:id" render={() => <QuizDetail />}/>
+        <Route exact path ="/game/:id/share" render={()=> <ShareQuiz />}/>
+        <Route exact path = "/game/:id/welcome" render={()=> <PlayerScreen/>}/>
+        <Route exact path = "/game/:id/play" render={()=> <Game /> }/>
+
       </Switch>
     </div>
   );

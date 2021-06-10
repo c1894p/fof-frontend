@@ -7,6 +7,8 @@ export const QuizDetail = () => {
 
   const [quizData, setQuizData] = useState([]);
 
+  // const questionID = quizData.id.questions._id
+
   useEffect(() => {
     axios
       .get(`http://localhost:3000/quizzes/${id}`)
@@ -31,17 +33,20 @@ export const QuizDetail = () => {
 
         <div>
           <h2>
-            Questions - <a href="/">edit</a>
+            Questions 
           </h2>
-          {quizData.questions === undefined ? null : quizData.questions.map((q) => (
-            <div>
-              <p>Q: {q.question}</p>
-              <p>A: {q.answer}</p>
-              <p>
-                Options: {q.options.A}, {q.options.B}, {q.options.C}, {q.options.D}
-              </p>
-            </div>
-          ))}
+          {quizData.questions === undefined
+            ? null
+            : quizData.questions.map((q) => (
+                <div key = {q._id}>
+                  <p>Q: {q.question} - <Link to={`/dashboard/${id}/${q._id}/editquestion`}>edit</Link></p>
+                  <p>A: {q.answer}</p>
+                  <p>
+                    Options: {q.options.A}, {q.options.B}, {q.options.C},{" "}
+                    {q.options.D}
+                  </p>
+                </div>
+              ))}
         </div>
       </div>
       <a href="/dashboard">BACK </a>
