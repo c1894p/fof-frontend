@@ -7,8 +7,6 @@ export const QuizDetail = () => {
 
   const [quizData, setQuizData] = useState([]);
 
-  // const questionID = quizData.id.questions._id
-
   useEffect(() => {
     axios
       .get(`http://localhost:3000/quizzes/${id}`)
@@ -33,7 +31,7 @@ export const QuizDetail = () => {
 
         <div>
           <h2>
-            Questions 
+            Questions - <Link to={`/create/question`}>Add a question</Link>
           </h2>
           {quizData.questions === undefined
             ? null

@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom'
 
 export const Home = () => {
     return(
@@ -7,7 +8,10 @@ export const Home = () => {
             <h3>How well do your friends know you?</h3>
             <h3>FoF is a way for you to quiz your friends about yourself to see who is a friend versus who is a foe!</h3>
 
-            <a href="/signin">Create a Quiz!</a>
+        
+            <Link to="/signin">
+            <button>Get Started</button>
+            </Link>
         </div>
     )
 }
