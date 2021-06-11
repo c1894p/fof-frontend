@@ -3,11 +3,10 @@ import axios from "axios";
 import { useParams, useHistory } from "react-router-dom";
 
 export const EditQuestion = ({ getData }) => {
-  // {formValue, setFormValue}
   const { id } = useParams();
   const { questionID } = useParams();
   const [formValue, setFormValue] = useState({});
-
+  
   const history = useHistory();
 
   useEffect(() => {
