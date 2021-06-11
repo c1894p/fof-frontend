@@ -31,18 +31,23 @@ export const Game = () => {
     if (quizState[currentQuestion].answer === e.target.value) {
       console.log("CORRECT");
       setScore((score += 1));
-    } else {
+      setCurrentQuestion((currentQuestion += 1))
+    } else if (quizState[currentQuestion].answer !== e.target.value){
       console.log("INCORRECT");
+      setCurrentQuestion((currentQuestion += 1))
+    } else {
+
     }
   };
 
-  const handleNextClick = () => {
-    if (currentQuestion <= quizState.length) {
-      setCurrentQuestion((currentQuestion += 1));
-    } else {
-      console.log("Quiz Finished");
-    }
-  };
+  // const handleNextClick = () => {
+  //   if (currentQuestion <= quizState.length) {
+  //     setCurrentQuestion((currentQuestion += 1));
+  //   } else {
+  //     console.log("Quiz Finished");
+  //   }
+  // };
+
 
   return (
     <div>
@@ -51,8 +56,8 @@ export const Game = () => {
         Score : {score} / {quizState.length} correct
       </p>
 
-      <h2>{quizState[currentQuestion].question}</h2>
-    
+      {quizState.length > 0 && <h2>{quizState[currentQuestion].question}</h2>}
+  
       {quizState.map((question) => (
         quizState[currentQuestion].question === question.question &&
           <div key={question._id}>
@@ -64,7 +69,7 @@ export const Game = () => {
         )
       )} 
     <br/>
-      <button onClick={handleNextClick}>Next Question</button>
+      {/* <button onClick={handleNextClick}>Next Question</button> */}
     </div>
   );
 };

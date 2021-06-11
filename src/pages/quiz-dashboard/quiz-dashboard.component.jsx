@@ -20,7 +20,7 @@ export const QuizDashboard = ({ getData, quizData }) => {
               <Link to={`/dashboard/${quiz._id}/editquiz`}>edit</Link>
             </h2>
             <h3>By: {quiz.author}</h3>
-            <Link to={`/game/${quiz._id}/share`}>
+            <Link to={`/game/${quiz._id}/${quiz.author}/share`}>
               Share Quiz
             </Link>
           </div>

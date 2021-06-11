@@ -33,12 +33,11 @@ export const EditQuiz = ({getData}) => {
       })
       .then((res) => {
         console.log(res.data);
+        getData()
+        history.push("/dashboard");
       })
       .catch((err) => console.log(err));
 
-      getData()
-
-    history.push("/dashboard");
   };
 
   const handleChange = (e) => {

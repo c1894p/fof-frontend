@@ -4,7 +4,7 @@ import axios from 'axios';
 import { Home } from "./pages/home/home.component";
 import { Header } from "./components/header/header.component";
 import { SignInAndSignUpPage } from "./pages/sign-in and sign-up/sign-in-and-sign-up.component";
-import { CreateQuiz } from "./pages/quiz/create-quiz.component";
+import { CreateQuiz } from "./pages/create-quiz/create-quiz.component";
 import { QuizDashboard } from "./pages/quiz-dashboard/quiz-dashboard.component"
 import { QuestionForm } from "./components/question-form/question-form.component";
 import { QuizDetail} from "./components/quiz-detail/quiz-detail.component"
@@ -19,7 +19,6 @@ import { Switch, Route } from "react-router-dom";
 function App() {
   const [quizDataState, setQuizDataState] = useState("");
   const [quizData, setQuizData] = useState([]);
-  const [formValue, setFormValue] = useState("");
 
   const getData = () => {
     axios.get("http://localhost:3000/quizzes")
@@ -63,8 +62,8 @@ function App() {
           render={() => <QuizDashboard getData={getData} quizData={quizData} setQuizDta={setQuizData}/>}
         />
         <Route exact path ="/dashboard/:id" render={() => <QuizDetail/>}/>
-        <Route exact path ="/game/:id/share" render={()=> <ShareQuiz />}/>
-        <Route exact path = "/game/:id/welcome" render={()=> <PlayerScreen/>}/>
+        <Route exact path ="/game/:id/:username/share" render={()=> <ShareQuiz />}/>
+        <Route exact path = "/game/:id/:username/welcome" render={()=> <PlayerScreen/>}/>
         <Route exact path = "/game/:id/play" render={()=> <Game /> }/>
 
       </Switch>

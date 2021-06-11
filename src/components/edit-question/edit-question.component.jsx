@@ -39,12 +39,12 @@ export const EditQuestion = ({getData}) => {
         optionD: e.target.optionD.value,
         answer: e.target.answer.value,
       })
-      .then((res) => console.log(res.data))
+      .then((res) => {
+        console.log(res.data)
+        getData()
+        history.push(`/dashboard/${id}`)
+      })
       .catch((err) => console.log(err));
-
-      getData()
-      
-      history.push(`/dashboard/${id}`)
   };
 
   const handleChange = (e) => {
