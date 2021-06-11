@@ -19,6 +19,7 @@ import { Switch, Route } from "react-router-dom";
 function App() {
   const [quizDataState, setQuizDataState] = useState("");
   const [quizData, setQuizData] = useState([]);
+  const [formValue, setFormValue] = useState("");
 
   const getData = () => {
     axios.get("http://localhost:3000/quizzes")
@@ -51,7 +52,7 @@ function App() {
         />
          <Route
           exact path="/dashboard/:id/:questionID/editquestion"
-          render={() => <EditQuestion />}
+          render={() => <EditQuestion getData={getData}/>}
         />
         <Route
           exact path="/dashboard/:id/editquiz"
@@ -61,7 +62,7 @@ function App() {
           exact path="/dashboard"
           render={() => <QuizDashboard getData={getData} quizData={quizData} setQuizDta={setQuizData}/>}
         />
-        <Route exact path ="/dashboard/:id" render={() => <QuizDetail />}/>
+        <Route exact path ="/dashboard/:id" render={() => <QuizDetail/>}/>
         <Route exact path ="/game/:id/share" render={()=> <ShareQuiz />}/>
         <Route exact path = "/game/:id/welcome" render={()=> <PlayerScreen/>}/>
         <Route exact path = "/game/:id/play" render={()=> <Game /> }/>

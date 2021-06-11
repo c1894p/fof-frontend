@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 
-export const EditQuestion = () => {
+export const EditQuestion = ({getData}) => {
+  // {formValue, setFormValue}
   const { id } = useParams();
   const { questionID } = useParams();
   const [questionState, setQuestionState] = useState([]);
+  const [formValue, setFormValue] = useState("");
+
+  const history = useHistory()
 
   useEffect(() => {
     axios
@@ -27,7 +31,7 @@ export const EditQuestion = () => {
     e.preventDefault();
 
     axios
-      .put(`http://localhost:3000/quizzes/${id}/${questionID}`, {
+      .put(`http://localhost:3000/quizzes/${id}/${questionID}/editquestion`, {
         question: e.target.question.value,
         optionA: e.target.optionA.value,
         optionB: e.target.optionB.value,
@@ -35,14 +39,17 @@ export const EditQuestion = () => {
         optionD: e.target.optionD.value,
         answer: e.target.answer.value,
       })
-      .then((res) => console.log(res))
+      .then((res) => console.log(res.data))
       .catch((err) => console.log(err));
+
+      getData()
+      
+      history.push(`/dashboard/${id}`)
   };
 
   const handleChange = (e) => {
-    e.preventDefault()
     const { value, name } = e.target;
-    setQuestionState({ [name]: value });
+    setFormValue({ [name]: value });
   };
 
   return (
@@ -51,61 +58,70 @@ export const EditQuestion = () => {
       {questionState.map((q) => {
         return (
           q._id === questionID && (
-            <form onSubmit={handleSubmit} key ={q._id}>
-              <label htmlFor="question">Enter Question: </label>
-              <input
-                type="text"
-                name="question"
-                value={q.question}
-                onChange={handleChange}
-                required
-              />
-              <label htmlFor="optionA">Option A: </label>
-              <input
-                type="text"
-                name="optionA"
-                value={q.options.A}
-                onChange={handleChange}
-                required
-              />
-              <label htmlFor="optionB">Option B: </label>
-              <input
-                type="text"
-                name="optionB"
-                value={q.options.B}
-                onChange={handleChange}
-                required
-              />
-              <label htmlFor="optionC">Option C: </label>
-              <input
-                type="text"
-                name="optionC"
-                value={q.options.C}
-                onChange={handleChange}
-                required
-              />
-              <label htmlFor="optionD">Option D: </label>
-              <input
-                type="text"
-                name="optionD"
-                value={q.options.D}
-                onChange={handleChange}
-                required
-              />
-              <label htmlFor="answer">Enter Answer: </label>
-              <input
-                type="text"
-                name="answer"
-                value={q.answer}
-                onChange={handleChange}
-                required
-              />
+            <div key={q._id}>
+              <h3>Question: {q.question}</h3>
+              <h4>Option A: {q.options.A}</h4>
+              <h4>Option B: {q.options.B}</h4>
+              <h4>Option C: {q.options.C}</h4>
+              <h4>Option D: {q.options.D}</h4>
+              <h4>Answer: {q.answer}</h4>
 
-              <input type="submit" value="Submit Change" />
-            </form>
-          )     
+              <form onSubmit={handleSubmit}>
+                <label htmlFor="question">Question: </label>
+                <input
+                  type="text"
+                  name="question"
+                  value={formValue.question}
+                  onChange={handleChange}
+                  required
+                />
+                <label htmlFor="optionA">Option A: </label>
+                <input
+                  type="text"
+                  name="optionA"
+                  value={formValue.optionA}
+                  onChange={handleChange}
+                  required
+                />
+                <label htmlFor="optionB">Option B: </label>
+                <input
+                  type="text"
+                  name="optionB"
+                  value={formValue.optionB}
+                  onChange={handleChange}
+                  required
+                />
+                <label htmlFor="optionC">Option C: </label>
+                <input
+                  type="text"
+                  name="optionC"
+                  value={formValue.optionC}
+                  onChange={handleChange}
+                  required
+                />
+                <label htmlFor="optionD">Option D: </label>
+                <input
+                  type="text"
+                  name="optionD"
+                  value={formValue.optionD}
+                  onChange={handleChange}
+                  required
+                />
+                <label htmlFor="answer">Enter Answer: </label>
+                <input
+                  type="text"
+                  name="answer"
+                  value={formValue.answer}
+                  onChange={handleChange}
+                  required
+                />
+
+                <input type="submit" value="Submit Change" />
+              </form>
+            </div>
+          )
         );
       })}
     </div>
-  )
+  );
 };

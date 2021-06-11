@@ -25,7 +25,6 @@ export const QuizDetail = () => {
 
   return (
     <div>
-      <div key={quizData.id}>
         <h1>{quizData.title} </h1>
         <h3>By: {quizData.author}</h3>
 
@@ -46,8 +45,10 @@ export const QuizDetail = () => {
                 </div>
               ))}
         </div>
-      </div>
-      <a href="/dashboard">BACK </a>
+     
+      <Link to = "/dashboard">
+        <button>Back</button>
+      </Link>
     </div>
   );
 };
