@@ -31,23 +31,12 @@ export const Game = () => {
     if (quizState[currentQuestion].answer === e.target.value) {
       console.log("CORRECT");
       setScore((score += 1));
-      setCurrentQuestion((currentQuestion += 1))
-    } else if (quizState[currentQuestion].answer !== e.target.value){
-      console.log("INCORRECT");
-      setCurrentQuestion((currentQuestion += 1))
+      setCurrentQuestion((currentQuestion += 1));
     } else {
-
+      console.log("INCORRECT");
+      setCurrentQuestion((currentQuestion += 1));
     }
   };
-
-  // const handleNextClick = () => {
-  //   if (currentQuestion <= quizState.length) {
-  //     setCurrentQuestion((currentQuestion += 1));
-  //   } else {
-  //     console.log("Quiz Finished");
-  //   }
-  // };
-
 
   return (
     <div>
@@ -56,20 +45,34 @@ export const Game = () => {
         Score : {score} / {quizState.length} correct
       </p>
 
-      {quizState.length > 0 && <h2>{quizState[currentQuestion].question}</h2>}
-  
-      {quizState.map((question) => (
-        quizState[currentQuestion].question === question.question &&
-          <div key={question._id}>
-            <button onClick={handleClick} value={question.options.A}>{question.options.A}</button>
-            <button onClick={handleClick} value={question.options.B}>{question.options.B}</button>
-            <button onClick={handleClick} value={question.options.C}>{question.options.C}</button>
-            <button onClick={handleClick} value={question.options.D}>{question.options.D}</button>
-          </div>
-        )
-      )} 
-    <br/>
-      {/* <button onClick={handleNextClick}>Next Question</button> */}
+      {currentQuestion < quizState.length  ? (
+        <div>
+          {quizState.length > 0 && (
+            <h2>{quizState[currentQuestion].question}</h2>
+          )}
+          {quizState.map(
+            (question) =>
+              quizState[currentQuestion].question === question.question && (
+                <div key={question._id}>
+                  <button onClick={handleClick} value={question.options.A}>
+                    {question.options.A}
+                  </button>
+                  <button onClick={handleClick} value={question.options.B}>
+                    {question.options.B}
+                  </button>
+                  <button onClick={handleClick} value={question.options.C}>
+                    {question.options.C}
+                  </button>
+                  <button onClick={handleClick} value={question.options.D}>
+                    {question.options.D}
+                  </button>
+                </div>
+              )
+          )}
+        </div>
+      ) : (
+        <p>GAME OVER</p>
+      )}
     </div>
   );
 };
