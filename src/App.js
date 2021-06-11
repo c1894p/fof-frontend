@@ -21,7 +21,7 @@ function App() {
   const [quizData, setQuizData] = useState([]);
 
   const getData = () => {
-    axios.get("http://localhost:3000/quizzes")
+    axios.get(`${process.env.REACT_APP_BACK_END_URL}/quizzes`)
     .then(res =>{
         return res
     })

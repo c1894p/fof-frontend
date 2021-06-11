@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import axios from "axios";
-import { Results } from "../results/results.component";
 
 export const Game = () => {
   const { id } = useParams();
@@ -11,7 +10,7 @@ export const Game = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/quizzes/${id}`)
+      .get(`${process.env.REACT_APP_BACK_END_URL}/quizzes/${id}`)
       .then((res) => {
         return res;
       })
@@ -71,7 +70,7 @@ export const Game = () => {
           )}
         </div>
       ) : (
-        <p>GAME OVER</p>
+        <h1>GAME OVER</h1>
       )}
     </div>
   );

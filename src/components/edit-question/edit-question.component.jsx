@@ -13,7 +13,7 @@ export const EditQuestion = ({getData}) => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/quizzes/${id}`)
+      .get(`${process.env.REACT_APP_BACK_END_URL}/quizzes/${id}`)
       .then((res) => {
         return res;
       })
@@ -31,7 +31,7 @@ export const EditQuestion = ({getData}) => {
     e.preventDefault();
 
     axios
-      .put(`http://localhost:3000/quizzes/${id}/${questionID}/editquestion`, {
+      .put(`${process.env.REACT_APP_BACK_END_URL}/quizzes/${id}/${questionID}/editquestion`, {
         question: e.target.question.value,
         optionA: e.target.optionA.value,
         optionB: e.target.optionB.value,

@@ -20,7 +20,7 @@ export const QuestionForm = ({ quizDataState }) => {
     const id = quizDataState._id;
 
     axios
-      .post(`http://localhost:3000/quizzes/${id}/questions`, 
+      .post(`${process.env.REACT_APP_BACK_END_URL}/quizzes/${id}/questions`, 
       {
         question: e.target.question.value,
         optionA: e.target.optionA.value,

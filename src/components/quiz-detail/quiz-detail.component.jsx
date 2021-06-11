@@ -9,7 +9,7 @@ export const QuizDetail = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/quizzes/${id}`)
+      .get(`${process.env.REACT_APP_BACK_END_URL}/quizzes/${id}`)
       .then((res) => {
         return res;
       })

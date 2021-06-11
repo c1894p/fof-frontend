@@ -12,7 +12,7 @@ export const QuizForm = ({ setQuizDataState }) => {
     e.preventDefault();
 
     axios
-      .post("http://localhost:3000/quizzes", {
+      .post(`${process.env.REACT_APP_BACK_END_URL}/quizzes`, {
         title: e.target.title.value,
         author: e.target.author.value,
       })

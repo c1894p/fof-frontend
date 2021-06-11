@@ -12,7 +12,7 @@ export const SignUp = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    axios.post("http://localhost:3000/users", {
+    axios.post(`${process.env.REACT_APP_BACK_END_URL}/users`, {
       username: e.target.username.value,
       email:e.target.email.value,
       password: e.target.password.value

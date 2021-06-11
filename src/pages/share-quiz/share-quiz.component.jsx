@@ -11,7 +11,7 @@ export const ShareQuiz = () =>{
             <p>Now that you have created a quiz, it's time to share with your friends!</p>
 
             Copy Link - <Link to ={`/game/${id}/${username}/welcome`}>
-            {`http://localhost:3001/game/${id}/${username}/welcome`}
+            {`${process.env.REACT_APP_BACK_END_URL}/${id}/${username}/welcome`}
             </Link> 
 
             <br/>
