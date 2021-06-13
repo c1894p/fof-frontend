@@ -1,0 +1,9 @@
+.sign-up-input{
+    width:380px;
+    display:flex;
+    flex-direction: column;
+}
+
+.sign-up-submit{
+    margin-top: 10px;
+}

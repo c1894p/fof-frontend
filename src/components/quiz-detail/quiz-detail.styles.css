@@ -1,0 +1,18 @@
+.quiz-detail-container{
+    text-align: center;
+}
+
+.quiz-title {
+    font-size: 60px;
+    margin-bottom: 0;
+}
+
+.quiz-content{
+    font-size: 20px;
+}
+
+.back-btn{
+    font-size: 20px;
+    width: 100px;
+    border-radius: 1em;
+}

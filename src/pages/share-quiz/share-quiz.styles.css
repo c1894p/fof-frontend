@@ -1,0 +1,19 @@
+.share-container{
+    text-align: center;
+}
+
+.share-header{
+    font-size: 50px;
+}
+
+.copy{
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.share-back-btn{
+    font-size: 20px;
+    width: 100px;
+    border-radius: 1em;
+}
+

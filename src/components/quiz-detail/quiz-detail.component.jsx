@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams, Link } from "react-router-dom";
 
+import "../quiz-detail/quiz-detail.styles.css"
+
 export const QuizDetail = () => {
   const { id } = useParams();
 
@@ -24,9 +26,9 @@ export const QuizDetail = () => {
   }, []);
 
   return (
-    <div>
-        <h1>{quizData.title} </h1>
-        <h3>By: {quizData.author}</h3>
+    <div className="quiz-detail-container">
+        <h1 className="quiz-title">{quizData.title} </h1>
+        <h3 className="quiz-author">By: {quizData.author}</h3>
 
         <div>
           <h2>
@@ -35,19 +37,19 @@ export const QuizDetail = () => {
           {quizData.questions === undefined
             ? null
             : quizData.questions.map((q) => (
-                <div key = {q._id}>
+                <div key = {q._id} className="quiz-content">
                   <p>Q: {q.question} - <Link to={`/dashboard/${id}/${q._id}/editquestion`}>edit</Link></p>
-                  <p>A: {q.answer}</p>
                   <p>
                     Options: {q.options.A}, {q.options.B}, {q.options.C},{" "}
                     {q.options.D}
                   </p>
+                  <p>A: {q.answer}</p>
                 </div>
               ))}
         </div>
      
       <Link to = "/dashboard">
-        <button>Back</button>
+        <button className="back-btn">Back</button>
       </Link>
     </div>
   );

@@ -1,0 +1,14 @@
+.player-screen-container{
+    text-align: center;
+}
+
+.player-screen-header{
+    font-size: 50px;
+}
+
+.play-btn{
+    margin-top: 25px;
+    font-size: 20px;
+    width: 100px;
+    border-radius: 1em;
+}

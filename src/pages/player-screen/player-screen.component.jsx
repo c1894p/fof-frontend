@@ -1,20 +1,22 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
 
+import "../player-screen/player-screen.styles.css"
+
 export const PlayerScreen = () => {
 
 const{id} = useParams();
 const{username} =useParams()
 
   return (
-    <div>
-      <h1>Friend or Foe</h1>
-      <p>Welcome! You have been chosen by {username.toUpperCase()} to take there quiz.</p>
-      <p>{username.toUpperCase()} has created a quiz about themselves to test how well you know them!</p>
-      <p>Click PLAY to get stated - GOOD LUCK!</p>
+    <div className="player-screen-container">
+      <h1 className="player-screen-header">Friend or Foe</h1>
+      <h2 className="player-screen-subhead">Welcome! You have been chosen by {username.toUpperCase()} to take there quiz</h2>
+      <h2 className="player-screen-subhead">{username.toUpperCase()} has created a quiz about themselves to test how well you know them!</h2>
+      <h2 className="player-screen-subhead">Click PLAY to get started - GOOD LUCK!</h2>
 
       <Link to={`/game/${id}/play`}>
-        <button>PLAY</button>
+        <button className="play-btn">PLAY</button>
       </Link>
     </div>
   );

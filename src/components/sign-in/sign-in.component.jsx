@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom"
 
+import "../sign-in/sign-in.styles.css"
+
 export const SignIn = () => {
 
   const initialState = { username: "", password: ""};
@@ -23,8 +25,9 @@ export const SignIn = () => {
   return (
     <div>
       <h2>I already have an account</h2>
-      <span>Sign in with your email and password</span>
+      <h4>Sign in with your email and password</h4>
 
+      <div className="sign-in">
       <form action="" onSubmit={handleSubmit}>
         <label>Username: </label>
         <input
@@ -32,6 +35,7 @@ export const SignIn = () => {
           name="username"
           value={newUserInfo.username}
           onChange={handleChange}
+          className="sign-in-input"
           required
         />
         <label>Password: </label>
@@ -40,11 +44,13 @@ export const SignIn = () => {
           name="password"
           value={newUserInfo.password}
           onChange={handleChange}
+          className="sign-in-input"
           required
         />
 
-        <input type="submit" value="Submit" />
+        <input type="submit" value="Submit" className="sign-in-submit"/>
       </form>
+      </div>
     </div>
   );
 };

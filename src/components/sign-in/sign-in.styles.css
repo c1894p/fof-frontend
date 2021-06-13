@@ -1,0 +1,9 @@
+.sign-in-input{
+    width:380px;
+    display:flex;
+    flex-direction: column;
+}
+
+.sign-in-submit{
+    margin-top: 10px;
+}

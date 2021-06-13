@@ -1,0 +1,16 @@
+.quiz-form-container{
+    text-align: center;
+}
+
+.quiz-form-header{
+    font-size: 50px;
+    margin-bottom: 0;
+}
+
+.quiz-form-subhead{
+    font-size: 25px;
+}
+
+.quiz-form-input{
+    margin-right: 10px;
+}

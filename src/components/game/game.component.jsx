@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 
+import "../game/game.styles.css"
+
 export const Game = () => {
   const { id } = useParams();
   const [quizState, setQuizState] = useState([]);
@@ -38,31 +40,31 @@ export const Game = () => {
   };
 
   return (
-    <div>
-      <h1>Friend or Foe</h1>
-      <p>
+    <div className="game-container">
+      <h1 className="game-header">Friend or Foe</h1>
+      <p className="game-score">
         Score : {score} / {quizState.length} correct
       </p>
 
       {currentQuestion < quizState.length  ? (
-        <div>
+        <div className="game-content">
           {quizState.length > 0 && (
-            <h2>{quizState[currentQuestion].question}</h2>
+            <h2 className="game-question" >{quizState[currentQuestion].question}</h2>
           )}
           {quizState.map(
             (question) =>
               quizState[currentQuestion].question === question.question && (
                 <div key={question._id}>
-                  <button onClick={handleClick} value={question.options.A}>
+                  <button onClick={handleClick} value={question.options.A} className="game-options">
                     {question.options.A}
                   </button>
-                  <button onClick={handleClick} value={question.options.B}>
+                  <button onClick={handleClick} value={question.options.B} className="game-options">
                     {question.options.B}
                   </button>
-                  <button onClick={handleClick} value={question.options.C}>
+                  <button onClick={handleClick} value={question.options.C} className="game-options">
                     {question.options.C}
                   </button>
-                  <button onClick={handleClick} value={question.options.D}>
+                  <button onClick={handleClick} value={question.options.D} className="game-options">
                     {question.options.D}
                   </button>
                 </div>
@@ -70,7 +72,8 @@ export const Game = () => {
           )}
         </div>
       ) : (
-        <h1>GAME OVER</h1>
+        <h1 className="game-over">GAME OVER</h1> 
+        // {score} > quizState.length/2 ? (<h2>You are a friend!</h2>) : (<h2>You are a foe!</h2>)
       )}
     </div>
   );

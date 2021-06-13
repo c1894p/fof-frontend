@@ -1,6 +1,8 @@
 import axios from "axios";
 import React, { useState } from "react";
-import {Link, useParams } from 'react-router-dom'
+import {Link } from 'react-router-dom'
+
+import "../question-form/question-form.styles.css"
 
 export const QuestionForm = ({ quizDataState }) => {
   const initialState = {
@@ -42,16 +44,15 @@ export const QuestionForm = ({ quizDataState }) => {
 
   return (
     <div>
-      <h1>FoF</h1>
-      {/* <span>{quizDataState}</span> */}
-      <p>
+      <h1 className= "question-form-header">Friend or Foe</h1>
+      <h4 className= "question-form-subhead">
         Great! Now that you have created your quiz, it's time to add some
         questions!
-      </p>
-      <p>
+      </h4>
+      <h4 className= "question-form-subhead">
         Add as many questions as you'd like. Once you are done, click FINISH!
-      </p>
-      <p>Fill out the form below:</p>
+      </h4>
+      <h4 className= "question-form-subhead">Fill out the form below:</h4>
       <form onSubmit={handleSubmit}>
         <label htmlFor="question">Enter Question: </label>
         <input
@@ -59,6 +60,7 @@ export const QuestionForm = ({ quizDataState }) => {
           name="question"
           value={questionState.question}
           onChange={handleChange}
+          className="question-form-input"
           required
         />
         <label htmlFor="optionA">Option A: </label>
@@ -67,6 +69,7 @@ export const QuestionForm = ({ quizDataState }) => {
           name="optionA"
           value={questionState.optionA}
           onChange={handleChange}
+          className="question-form-input"
           required
         />
         <label htmlFor="optionB">Option B: </label>
@@ -75,6 +78,7 @@ export const QuestionForm = ({ quizDataState }) => {
           name="optionB"
           value={questionState.optionB}
           onChange={handleChange}
+          className="question-form-input"
           required
         />
         <label htmlFor="optionC">Option C: </label>
@@ -83,6 +87,7 @@ export const QuestionForm = ({ quizDataState }) => {
           name="optionC"
           value={questionState.optionC}
           onChange={handleChange}
+          className="question-form-input"
           required
         />
         <label htmlFor="optionD">Option D: </label>
@@ -91,6 +96,7 @@ export const QuestionForm = ({ quizDataState }) => {
           name="optionD"
           value={questionState.optionD}
           onChange={handleChange}
+          className="question-form-input"
           required
         />
         <label htmlFor="answer">Enter Answer: </label>
@@ -99,6 +105,7 @@ export const QuestionForm = ({ quizDataState }) => {
           name="answer"
           value={questionState.answer}
           onChange={handleChange}
+          className="question-form-input"
           required
         />
 
@@ -106,7 +113,7 @@ export const QuestionForm = ({ quizDataState }) => {
       </form>
 
       <Link to="/dashboard">
-          <button>FINISH</button>
+          <button className="finish-btn">FINISH</button>
       </Link>
     </div>
   );

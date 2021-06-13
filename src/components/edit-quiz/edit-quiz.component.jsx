@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useHistory, useParams } from "react-router-dom";
 
+import "../edit-quiz/edit-quiz.styles.css"
+
 export const EditQuiz = ({getData}) => {
   const history = useHistory();
   const [quizState, setQuizState] = useState(null);
@@ -50,7 +52,7 @@ if (quizState == null) return null
     <div>
       <h1>EDIT QUIZ</h1>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="title">Quiz Title: </label>
+        <label htmlFor="title" className="edit-quiz-label">Quiz Title: </label>
         <input
           type="text"
           name="title"
@@ -58,7 +60,7 @@ if (quizState == null) return null
           onChange={handleChange}
           required
         />
-        <input type="submit" value="Submit" />
+        <input type="submit" value="Submit Change" className="edit-quiz-btn"/>
       </form>
     </div>
   );

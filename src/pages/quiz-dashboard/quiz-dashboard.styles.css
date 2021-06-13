@@ -1,0 +1,21 @@
+.dashboard-header{
+    font-size: 50px;
+}
+
+.create-btn{
+    font-size: 15px;
+}
+
+.share-btn{
+    font-size: 15px;
+    border-radius: 3em;
+}
+
+.dashboard-content{
+    margin-bottom: 40px;
+}
+
+
+.header-title{
+    font-size: 35px;
+}

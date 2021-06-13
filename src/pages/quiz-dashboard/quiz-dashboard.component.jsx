@@ -1,27 +1,29 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 
+import "../quiz-dashboard/quiz-dashboard.styles.css"
+
 export const QuizDashboard = ({ getData, quizData }) => {
   useEffect(() => {
     getData();
   }, []);
 
   return (
-    <div>
-      <h1>Quiz Dashboard</h1>
+    <div className = "dashboard-container">
+      <h1 className="dashboard-header">Quiz Dashboard</h1>
       <Link to="/create">
-        <button>Create a new Quiz</button>
+        <button className="create-btn">Create a new Quiz</button>
       </Link>
       {quizData.map((quiz) => {
         return (
-          <div key={quiz._id}>
-            <h2>
+          <div key={quiz._id} className="dashboard-content">
+            <h2 className="dashboard-title">
               Title: <Link to={`/dashboard/${quiz._id}`}>{quiz.title}</Link> -{" "}
               <Link to={`/dashboard/${quiz._id}/editquiz`}>edit</Link>
             </h2>
-            <h3>By: {quiz.author}</h3>
-            <Link to={`/game/${quiz._id}/${quiz.author}/share`}>
-              Share Quiz
+            <h3 className="dashboard-author">By: {quiz.author}</h3>
+            <Link to={`/game/${quiz._id}/${quiz.author}/share`} >
+              <button className="share-btn">Share Quiz</button>
             </Link>
           </div>
         );

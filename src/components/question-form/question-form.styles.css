@@ -1,0 +1,19 @@
+.finish-btn{
+    margin-top: 10px;
+}
+
+.question-form-input{
+    width:380px;
+    display:flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.question-form-header{
+    font-size: 50px;
+    margin-bottom: 0;
+}
+
+.question-form-subhead{
+    font-size: 25px;
+}

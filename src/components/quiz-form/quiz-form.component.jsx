@@ -2,6 +2,8 @@ import axios from "axios";
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 
+import "../quiz-form/quiz-form.styles.css"
+
 export const QuizForm = ({ setQuizDataState }) => {
   const initialState = { author: "", title: "" };
   const [quizState, setQuizState] = useState(initialState);
@@ -36,10 +38,10 @@ export const QuizForm = ({ setQuizDataState }) => {
   };
 
   return (
-    <div>
-      <h1>FoF</h1>
-      <p>The time has come to create your quiz!</p>
-      <p>Fill out the form below:</p>
+    <div className ="quiz-form-container">
+      <h1 className="quiz-form-header">Friend or Foe</h1>
+      <h4 className="quiz-form-subhead">The time has come to create your quiz!</h4>
+      <h4 className="quiz-form-subhead">Fill out the form below:</h4>
       <form onSubmit={handleSubmit}>
         <label htmlFor="author">Enter Username: </label>
         <input
@@ -47,6 +49,7 @@ export const QuizForm = ({ setQuizDataState }) => {
           name="author"
           value={quizState.author}
           onChange={handleChange}
+          className="quiz-form-input"
           required
         />
         <label htmlFor="title">Quiz Title: </label>
@@ -55,6 +58,7 @@ export const QuizForm = ({ setQuizDataState }) => {
           name="title"
           value={quizState.title}
           onChange={handleChange}
+          className="quiz-form-input"
           required
         />
 
