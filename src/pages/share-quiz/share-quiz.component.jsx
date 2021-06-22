@@ -20,7 +20,7 @@ export const ShareQuiz = () =>{
             <br/>
 
             <Link to= "/dashboard">
-                <button className="back-btn">Back</button>
+                <button className="share-back-btn">Back</button>
             </Link>
         </div>
     )

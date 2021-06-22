@@ -50,7 +50,7 @@ export const QuizDetail = () => {
         </div>
      
       <Link to = "/dashboard">
-        <button className="back-btn">Back</button>
+        <button className="quiz-detail-back-btn">Back</button>
       </Link>
     </div>
   );

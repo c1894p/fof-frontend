@@ -1,5 +1,6 @@
 .player-screen-container{
     text-align: center;
+    color: #f4a261
 }
 
 .player-screen-header{
@@ -8,7 +9,11 @@
 
 .play-btn{
     margin-top: 25px;
+    padding: 5px 0;
     font-size: 20px;
     width: 100px;
     border-radius: 1em;
+    background-color:#264653;
+    border-width: 0;
+    color: white;
 }

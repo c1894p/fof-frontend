@@ -1,5 +1,6 @@
 .game-container{
     text-align: center;
+    color: #f4a261
 }
 
 .game-header{
@@ -19,6 +20,8 @@
     font-size: 20px;
     width: 200px;
     border-radius: 1em;
+    color:white;
+    background-color:#264653;
 }
 
 .game-over{
