@@ -2,8 +2,19 @@
     width:380px;
     display:flex;
     flex-direction: column;
+    background-color: white;
 }
 
 .sign-up-submit{
     margin-top: 10px;
+    background-color:#264653;
+    color: white;
+}
+
+.sign-up-header{
+    color: #f4a261
+}
+
+.sign-up-label{
+    color: #f4a261
 }

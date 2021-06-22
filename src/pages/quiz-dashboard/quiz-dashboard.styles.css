@@ -1,18 +1,33 @@
 .dashboard-header{
     font-size: 50px;
+    color: #f4a261;
 }
 
 .create-btn{
     font-size: 15px;
+    background-color:#264653;
+    color: white;
+}
+
+.create-btn:hover{
+    cursor: pointer;
 }
 
 .share-btn{
     font-size: 15px;
     border-radius: 3em;
+    background-color:#264653;
+    border-width: 0;
+    color: white;
+}
+
+.share-btn:hover{
+    cursor: pointer;
 }
 
 .dashboard-content{
     margin-bottom: 40px;
+    color: #f4a261
 }
 
 

@@ -32,7 +32,8 @@ export const QuizDetail = () => {
 
         <div>
           <h2>
-            Questions - <Link to={`/create/question`}>Add a question</Link>
+            Questions 
+            {/* - <Link to={`/create/question`}>Add a question</Link> */}
           </h2>
           {quizData.questions === undefined
             ? null

@@ -62,7 +62,7 @@ export const QuizForm = ({ setQuizDataState }) => {
           required
         />
 
-        <input type="submit" value="Submit" />
+        <input className="quiz-submit" type="submit" value="Submit" />
       </form>
     </div>
   );

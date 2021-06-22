@@ -1,5 +1,6 @@
 .quiz-form-container{
     text-align: center;
+    color: #f4a261
 }
 
 .quiz-form-header{
@@ -13,4 +14,11 @@
 
 .quiz-form-input{
     margin-right: 10px;
+    background-color: white;
+}
+
+.quiz-submit{
+    background-color:#264653;
+
+    color: white;
 }

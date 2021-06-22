@@ -43,7 +43,7 @@ export const QuestionForm = ({ quizDataState }) => {
   };
 
   return (
-    <div>
+    <div className= "question-form-container">
       <h1 className= "question-form-header">Friend or Foe</h1>
       <h4 className= "question-form-subhead">
         Great! Now that you have created your quiz, it's time to add some
@@ -109,7 +109,7 @@ export const QuestionForm = ({ quizDataState }) => {
           required
         />
 
-        <input type="submit" value="Add Question" />
+        <input className="question-form-submit" type="submit" value="Add Question" />
       </form>
 
       <Link to="/dashboard">

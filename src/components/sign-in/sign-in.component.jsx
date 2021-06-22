@@ -24,12 +24,12 @@ export const SignIn = () => {
 
   return (
     <div>
-      <h2>I already have an account</h2>
-      <h4>Sign in with your email and password</h4>
+      <h2 className="sign-in-header">I already have an account</h2>
+      <h4 className="sign-in-header">Sign in with your email and password</h4>
 
       <div className="sign-in">
       <form action="" onSubmit={handleSubmit}>
-        <label>Username: </label>
+        <label className="sign-in-label">Username: </label>
         <input
           type="text"
           name="username"
@@ -38,7 +38,7 @@ export const SignIn = () => {
           className="sign-in-input"
           required
         />
-        <label>Password: </label>
+        <label className="sign-in-label">Password: </label>
         <input
           type="password"
           name="password"

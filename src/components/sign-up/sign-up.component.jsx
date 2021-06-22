@@ -35,12 +35,12 @@ export const SignUp = () => {
 
   return (
     <div>
-      <h2>I don't have an account</h2>
-      <h4>Sign up with your email and password</h4>
+      <h2 className="sign-up-header">I don't have an account</h2>
+      <h4 className="sign-up-header">Sign up with your email and password</h4>
 
       <div className="sign-up">
       <form onSubmit={handleSubmit} >
-        <label>Username: </label>
+        <label className="sign-up-label">Username: </label>
         <input
           type="text"
           name="username"
@@ -49,7 +49,7 @@ export const SignUp = () => {
           className="sign-up-input"
           required
         />
-        <label>Email: </label>
+        <label className="sign-up-label">Email: </label>
         <input
           type="email"
           name="email"
@@ -58,7 +58,7 @@ export const SignUp = () => {
           className="sign-up-input"
           required
         />
-        <label>Password: </label>
+        <label className="sign-up-label">Password: </label>
         <input
           type="password"
           name="password"
@@ -67,7 +67,7 @@ export const SignUp = () => {
           className="sign-up-input"
           required
         />
-        <label>Confirm Password: </label>
+        <label className="sign-up-label">Confirm Password: </label>
         <input
           type="password"
           name="confirmPassword"

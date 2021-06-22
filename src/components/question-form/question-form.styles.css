@@ -1,3 +1,7 @@
+.question-form-container{
+    color: #f4a261;
+}
+
 .finish-btn{
     margin-top: 10px;
 }
@@ -7,6 +11,7 @@
     display:flex;
     flex-direction: column;
     margin-bottom: 10px;
+    background-color: white;
 }
 
 .question-form-header{
@@ -16,4 +21,10 @@
 
 .question-form-subhead{
     font-size: 25px;
+}
+
+
+.question-form-submit , .finish-btn{
+    background-color:#264653;
+    color: white;
 }
