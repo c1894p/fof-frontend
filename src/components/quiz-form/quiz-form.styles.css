@@ -19,6 +19,9 @@
 
 .quiz-submit{
     background-color:#264653;
-
     color: white;
+}
+
+.quiz-submit:hover{
+    cursor: pointer;
 }

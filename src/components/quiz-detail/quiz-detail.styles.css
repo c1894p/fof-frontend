@@ -1,5 +1,6 @@
 .quiz-detail-container{
     text-align: center;
+    color: #f4a261;
 }
 
 .quiz-title {
@@ -15,4 +16,11 @@
     font-size: 20px;
     width: 100px;
     border-radius: 1em;
+    background-color:#264653;
+    border-width: 0;
+    color: white;
+}
+
+.back-btn:hover{
+    cursor: pointer;
 }

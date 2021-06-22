@@ -28,3 +28,7 @@
     background-color:#264653;
     color: white;
 }
+
+.question-form-submit , .finish-btn:hover{
+   cursor:pointer;
+}

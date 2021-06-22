@@ -35,6 +35,7 @@ export const QuestionForm = ({ quizDataState }) => {
       .catch((err) => console.log(err));
 
     setQuestionState(initialState);
+    alert("Question has been added!")
   };
 
   const handleChange = (e) => {
