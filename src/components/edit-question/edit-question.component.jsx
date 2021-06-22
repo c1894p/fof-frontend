@@ -64,8 +64,8 @@ export const EditQuestion = ({ getData }) => {
   };
 
   return (
-    <div>
-      <h1>EDIT QUESTION</h1>
+    <div className="edit-question-container">
+      <h1 className="edit-question-header">EDIT QUESTION</h1>
       <form onSubmit={handleSubmit}>
         <label htmlFor="question" className="edit-question-label">Question: </label>
         <input
@@ -121,7 +121,7 @@ export const EditQuestion = ({ getData }) => {
           className="edit-question-input"
           required
         />
-        <input type="submit" value="Submit Change"/>
+        <input className="edit-question-submit" type="submit" value="Submit Change"/>
       </form>
     </div>
   );

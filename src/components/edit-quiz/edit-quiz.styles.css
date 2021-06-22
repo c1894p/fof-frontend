@@ -1,9 +1,23 @@
+.edit-quiz-container{
+    color: #f4a261
+}
+
 .edit-quiz-label{
     font-size: 20px;
+}
+
+.edit-quiz-input{
+    background-color: white;
 }
 
 .edit-quiz-btn{
     display:flex;
     flex-direction: column;
     margin-top: 15px;
+    background-color:#264653;
+    color: white;
+}
+
+.edit-quiz-btn:hover{
+    cursor: pointer;
 }

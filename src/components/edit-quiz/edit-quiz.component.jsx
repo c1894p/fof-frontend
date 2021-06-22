@@ -49,8 +49,8 @@ export const EditQuiz = ({getData}) => {
 
 if (quizState == null) return null
   return (
-    <div>
-      <h1>EDIT QUIZ</h1>
+    <div className="edit-quiz-container">
+      <h1 className="edit-quiz-header">EDIT QUIZ</h1>
       <form onSubmit={handleSubmit}>
         <label htmlFor="title" className="edit-quiz-label">Quiz Title: </label>
         <input
@@ -58,6 +58,7 @@ if (quizState == null) return null
           name="title"
           value={quizState.title}
           onChange={handleChange}
+          className="edit-quiz-input"
           required
         />
         <input type="submit" value="Submit Change" className="edit-quiz-btn"/>

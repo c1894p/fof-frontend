@@ -1,10 +1,27 @@
+.edit-question-container{
+    color: #f4a261
+}
+
 .edit-question-input{
     width:380px;
     display:flex;
     flex-direction: column;
     margin-bottom: 10px;
+    background-color: white;
 }
 
 .edit-question-label{
     font-size: 20px;
 }
+
+.edit-question-submit{
+    background-color:#264653;
+    color: white;
+}
+
+.edit-question-submit:hover{
+    cursor: pointer;
+}
+
+
+
