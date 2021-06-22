@@ -31,15 +31,15 @@ export const QuizDetail = () => {
         <h3 className="quiz-author">By: {quizData.author}</h3>
 
         <div>
-          <h2>
-            Questions 
+          <h2 className="quiz-question-title">
+            Questions:
             {/* - <Link to={`/create/question`}>Add a question</Link> */}
           </h2>
           {quizData.questions === undefined
             ? null
             : quizData.questions.map((q) => (
                 <div key = {q._id} className="quiz-content">
-                  <p>Q: {q.question} - <Link to={`/dashboard/${id}/${q._id}/editquestion`}>edit</Link></p>
+                  <p>Q: {q.question} ?- <Link to={`/dashboard/${id}/${q._id}/editquestion`}>edit</Link></p>
                   <p>
                     Options: {q.options.A}, {q.options.B}, {q.options.C},{" "}
                     {q.options.D}

@@ -7,9 +7,12 @@
     font-size: 60px;
     margin-bottom: 0;
 }
-
+.quiz-question-title{
+    font-size:40px;
+}
 .quiz-content{
-    font-size: 20px;
+    font-size: 25px;
+    font-weight: bold;
 }
 
 .quiz-detail-back-btn{
