@@ -72,7 +72,7 @@ export const Game = () => {
           )}
         </div>
       ) : (
-        <h1 className="game-over">GAME OVER {score > quizState.length/2 ? (<h2>You are a friend!</h2>) : (<h2>You are a foe!</h2>)}</h1>
+        <h1 className="game-over">GAME OVER {score > quizState.length/2 ? (<h2 className="game-over">You are a friend!</h2>) : (<h2 className="game-over">You are a foe!</h2>)}</h1>
       )}
     </div>
   );
