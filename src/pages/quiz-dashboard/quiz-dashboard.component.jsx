@@ -8,6 +8,7 @@ export const QuizDashboard = ({ getData, quizData }) => {
     getData();
   }, []);
 
+
   return (
     <div className = "dashboard-container">
       <h1 className="dashboard-header">Quiz Dashboard</h1>

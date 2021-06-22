@@ -61,7 +61,7 @@ function App() {
           exact path="/dashboard"
           render={() => <QuizDashboard getData={getData} quizData={quizData} setQuizDta={setQuizData}/>}
         />
-        <Route exact path ="/dashboard/:id" render={() => <QuizDetail/>}/>
+        <Route exact path ="/dashboard/:id" render={() => <QuizDetail getData={getData} />}/>
         <Route exact path ="/game/:id/:username/share" render={()=> <ShareQuiz />}/>
         <Route exact path = "/game/:id/:username/welcome" render={()=> <PlayerScreen/>}/>
         <Route exact path = "/game/:id/play" render={()=> <Game /> }/>

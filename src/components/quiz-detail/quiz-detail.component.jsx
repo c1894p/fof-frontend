@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useHistory } from "react-router-dom";
 
 import "../quiz-detail/quiz-detail.styles.css"
 
-export const QuizDetail = () => {
+export const QuizDetail = ({getData}) => {
   const { id } = useParams();
 
   const [quizData, setQuizData] = useState([]);
@@ -25,10 +25,26 @@ export const QuizDetail = () => {
       });
   }, []);
 
+  const history = useHistory()
+
+  const deleteQuiz= () => {
+    axios
+    .delete(`${process.env.REACT_APP_BACK_END_URL}/quizzes/${id}`)
+    .then((res) =>{
+      console.log('quiz deleted', res)
+    })
+    .catch((e) => {
+      console.log("Get req error for quiz data", e);
+    });
+    getData()
+    history.push("/dashboard")
+  }
+
   return (
     <div className="quiz-detail-container">
         <h1 className="quiz-title">{quizData.title} </h1>
         <h3 className="quiz-author">By: {quizData.author}</h3>
+        <button onClick={deleteQuiz} className="quiz-delete-btn">Delete Quiz</button>
 
         <div>
           <h2 className="quiz-question-title">

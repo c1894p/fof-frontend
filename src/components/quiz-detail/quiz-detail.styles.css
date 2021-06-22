@@ -28,3 +28,17 @@
 .quiz-detail-back-btn:hover{
     cursor: pointer;
 }
+
+.quiz-delete-btn{
+    font-size: 15px;
+    padding: 5px 0;
+    width: 100px;
+    border-radius: 1em;
+    background-color:#264653;
+    border-width: 0;
+    color: white;
+}
+
+.quiz-delete-btn:hover{
+    cursor: pointer;
+}
