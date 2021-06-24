@@ -48,14 +48,14 @@ export const QuizDetail = ({getData}) => {
 
         <div>
           <h2 className="quiz-question-title">
-            Questions:
-            - <Link to={`/dashboard/${id}/addquestion`}><span className="quiz-add-question">Add a question</span></Link>
+            Questions
+            - <Link to={`/dashboard/${id}/addquestion`}><span className="quiz-add-question">add new question</span></Link>
           </h2>
           {quizData.questions === undefined
             ? null
             : quizData.questions.map((q) => (
                 <div key = {q._id} className="quiz-content">
-                  <p>Q: {q.question} ?- <Link to={`/dashboard/${id}/${q._id}/editquestion`}>edit</Link></p>
+                  <p>Q: {q.question} ? - <Link to={`/dashboard/${id}/${q._id}/editquestion`}>edit</Link></p>
                   <p>
                     Options: {q.options.A}, {q.options.B}, {q.options.C},{" "}
                     {q.options.D}

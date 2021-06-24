@@ -1,0 +1,34 @@
+.add-question-form-container{
+    color: #f4a261;
+}
+
+.add-question-finish-btn{
+    margin-top: 10px;
+}
+
+.add-question-form-input{
+    width:380px;
+    display:flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    background-color: white;
+}
+
+.add-question-form-header{
+    font-size: 50px;
+    margin-bottom: 0;
+}
+
+.add-question-form-subhead{
+    font-size: 25px;
+}
+
+
+.add-question-form-submit , .add-question-finish-btn{
+    background-color:#264653;
+    color: white;
+}
+
+.add-question-form-submit , .add-question-finish-btn:hover{
+   cursor:pointer;
+}

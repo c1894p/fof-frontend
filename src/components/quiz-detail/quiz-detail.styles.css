@@ -42,3 +42,7 @@
 .quiz-delete-btn:hover{
     cursor: pointer;
 }
+
+.quiz-add-question{
+    font-size: 30px;
+}
