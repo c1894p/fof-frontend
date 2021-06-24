@@ -49,7 +49,7 @@ export const QuizDetail = ({getData}) => {
         <div>
           <h2 className="quiz-question-title">
             Questions:
-            {/* - <Link to={`/create/question`}>Add a question</Link> */}
+            - <Link to={`/dashboard/${id}/addquestion`}><span className="quiz-add-question">Add a question</span></Link>
           </h2>
           {quizData.questions === undefined
             ? null

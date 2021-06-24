@@ -8,6 +8,7 @@ import { CreateQuiz } from "./pages/create-quiz/create-quiz.component";
 import { QuizDashboard } from "./pages/quiz-dashboard/quiz-dashboard.component"
 import { QuestionForm } from "./components/question-form/question-form.component";
 import { QuizDetail} from "./components/quiz-detail/quiz-detail.component"
+import {AddQuestion} from "./components/add-question/add-question.component"
 import{ EditQuiz} from "./components/edit-quiz/edit-quiz.component"
 import{EditQuestion} from "./components/edit-question/edit-question.component"
 import{ShareQuiz} from "./pages/share-quiz/share-quiz.component"
@@ -62,6 +63,7 @@ function App() {
           render={() => <QuizDashboard getData={getData} quizData={quizData} setQuizDta={setQuizData}/>}
         />
         <Route exact path ="/dashboard/:id" render={() => <QuizDetail getData={getData} />}/>
+        <Route exact path ="/dashboard/:id/addquestion" render={() => <AddQuestion getData={getData} />}/>
         <Route exact path ="/game/:id/:username/share" render={()=> <ShareQuiz />}/>
         <Route exact path = "/game/:id/:username/welcome" render={()=> <PlayerScreen/>}/>
         <Route exact path = "/game/:id/play" render={()=> <Game /> }/>
