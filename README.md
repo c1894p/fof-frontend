@@ -7,7 +7,7 @@ Friend or Foe is an app that allows users to create and save a quiz about themse
 
 Frontend: [https://lit-brook-00092.herokuapp.com/](https://lit-brook-00092.herokuapp.com/)
 
-Backend: [https://nameless-garden-31860.herokuapp.com/](https://nameless-garden-31860.herokuapp.com/) - queries: /quizzes or /users
+Backend: [https://nameless-garden-31860.herokuapp.com/](https://nameless-garden-31860.herokuapp.com/) 
 
 ## Screenshots
 
