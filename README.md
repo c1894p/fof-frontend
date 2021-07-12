@@ -2,7 +2,7 @@
 
 #### Description
 
-Friend or Foe is an app that allows signed in users to create and save a quiz about themselves. Once created, they will have the abilityy to share the quiz with their friends and see on how well they may know them. Once completed, the user will know who is a friend or who is a foe!
+Friend or Foe is an app that allows users to create and save a quiz about themselves. Once created, they will have the ability to share the quiz with their friends in order to see how well they may know them. Once completed, the user will know if the player is a friend or a foe!
 #### Live Links
 
 Frontend: [https://lit-brook-00092.herokuapp.com/](https://lit-brook-00092.herokuapp.com/)
