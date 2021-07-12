@@ -1,70 +1,84 @@
-# Getting Started with Create React App
+# Friend or Foe
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+#### Description
 
-## Available Scripts
+Friend or Foe is an app that allows signed in users to create and save a quiz about themselves. Once created, they will have the abilityy to share the quiz with their friends and see on how well they may know them. Once completed, the user will know who is a friend or who is a foe!
+#### Live Links
 
-In the project directory, you can run:
+Frontend: [https://lit-brook-00092.herokuapp.com/](https://lit-brook-00092.herokuapp.com/)
 
-### `npm start`
+Backend: [https://nameless-garden-31860.herokuapp.com/](https://nameless-garden-31860.herokuapp.com/)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Screenshots
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+**Landing Page**
 
-### `npm test`
+**Sign In/Sign Up**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**Create Quiz and Questions**
 
-### `npm run build`
+**User Dashboard**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**Share Quiz Page**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**Player Start Page**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**Quiz Page**
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Technologies Used
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- HTML, CSS
+- Javascript
+- React
+- NodeJS
+- Express
+- MongoDB
+- Mongoose
+- Heroku
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## User Stories
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+**MVP Goals**
 
-## Learn More
+- As a user, I would like to be able to create a quiz 
+- As a user, I woild like to be able to edit or add questions on an existing quiz
+- As a user, I would like to be able to create more then one quiz
+- As a user, I would like to be able to share the quiz after creation
+- As a player, I would like to know how many questions there are
+- As a player, I would like to see how many questions I got correct after finishing
+- As a player, I would like to know if I am Friend or a Foe
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+**Strecth Goals**
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Implement JWT Authentication
+- Make sure only singed in users can see the quizzes they have made
+- Create a user dashboard for signed up/in users to perform CRUD functions and share quizzes
 
-### Code Splitting
+## Installation Instructions
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+To run locally, you must acquire all necessary environment variables then follow the installation instructions below:
 
-### Analyzing the Bundle Size
+1. Fork and clone [this repository](https://github.com/c1894p/fof-frontend/tree/master)
+2. Install all dependencies
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+   ```
+   npm install
+   ```
 
-### Making a Progressive Web App
+3. Install devDependencies
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+   ```
+   npm install nodemon --save-dev
+   ```
 
-### Advanced Configuration
+4. Start the local server
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+   ```
+   npm run dev
+   ```
 
-### Deployment
+Otherwise, checkout out the [live links](#live-links)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Wireframes
